@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useFetch } from '../hooks/useCustomHooks';
-import { formatDate } from '../utils/formatters';
+import { useFetch } from '../../hooks/useCustomHooks';
+import { formatDate } from '../../utils/formatters';
 import './DataFetcher.css';
 
 interface Post {
@@ -33,7 +33,7 @@ const DataFetcher: React.FC = () => {
   useEffect(() => {
     console.log('Component mounted - runs once');
     document.title = `React Learning - Count: ${count}`;
-  }, []);
+  });
 
   // useEffect that runs on every render (usually avoided)
   useEffect(() => {

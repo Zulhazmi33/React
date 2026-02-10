@@ -1,9 +1,9 @@
 import React from 'react';
-import { useUser } from '../context/UserContext';
-import LoginForm from './LoginForm';
-import UserCard from './UserCard';
-import DataFetcher from './DataFetcher';
-import { formatCurrency, capitalize } from '../utils/formatters';
+import { useUser } from '../../context/UserContext';
+import LoginForm from '../LoginForm/LoginForm';
+import UserCard from '../UserCard/UserCard';
+import DataFetcher from '../DateFetcher/DataFetcher';
+import { formatCurrency, capitalize } from '../../utils/formatters';
 import './HomePage.css';
 
 const HomePage: React.FC = () => {

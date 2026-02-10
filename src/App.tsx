@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
-import HomePage from './components/HomePage';
-import AboutPage from './components/AboutPage';
+import HomePage from './components/HomePage/HomePage';
+import AboutPage from './components/AboutPage/AboutPage';
 import './App.css';
 
 // Main App component
