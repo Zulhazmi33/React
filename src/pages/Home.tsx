@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchTodos } from '../services/api';
 import type { Todo } from '../services/api';
-import TodoItem from '../components/TodoItem';
-import TodoForm from '../components/TodoForm';
+import TodoItem from '../components/Todo/TodoItem';
+import TodoForm from '../components/Todo/TodoForm';
 
 const Home: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
