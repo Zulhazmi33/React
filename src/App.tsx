@@ -1,43 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { UserProvider } from './context/UserContext';
+import HomePage from './components/HomePage';
+import AboutPage from './components/AboutPage';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  const test = <button>hai</button>;
-  const image = 
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-  const card = 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-  const read = 
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-  const title = <h1>Vite + React + {test}</h1>
+// Main App component
+const App: React.FC = () => {
   return (
-    <>
-      {image}
-      {title}
-      {card}
-      {read}
-    </>
-  )
-}
+    // Router provides navigation capabilities
+    <Router>
+      {/* UserProvider wraps the app to provide context globally */}
+      <UserProvider>
+        <div className="app">
+          {/* Navigation bar */}
+          <nav className="navbar">
+            <div className="nav-container">
+              <div className="nav-brand">React Learning</div>
+              <div className="nav-links">
+                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/about" className="nav-link">About</Link>
+              </div>
+            </div>
+          </nav>
 
-export default App
+          {/* Routes - similar to Angular Router */}
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </div>
+      </UserProvider>
+    </Router>
+  );
+};
+
+export default App;
