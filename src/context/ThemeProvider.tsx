@@ -9,6 +9,8 @@ export interface ThemeContextType {
   toggleTheme: () => void;
 }
 
+
+
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('light');
 
