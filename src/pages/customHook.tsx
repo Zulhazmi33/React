@@ -15,6 +15,53 @@ const CustomHook: React.FC = () => {
         <button onClick={divide}>/2</button>
         <button onClick={reset}>Reset</button>
       </div>
+
+      <br></br>
+      <br></br>
+
+      <h1>Quick Hook vs Angular Cheatsheet</h1>
+      <table style={{border: '1px solid black'}}>
+        <thead>
+          <tr>
+            <th>React Hook</th>
+            <th>Angular Analogy</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>useState</td>
+            <td>Component property + ngModel</td>
+            <td>Reactive, triggers re-render</td>
+          </tr>
+          <tr>
+            <td>useEffect</td>
+            <td>ngOnInit / ngOnChanges / ngOnDestroy</td>
+            <td>Flexible, depends on deps</td>
+          </tr>
+          <tr>
+            <td>useContext</td>
+            <td>Injectable service + DI</td>
+            <td>Avoids prop drilling</td>
+          </tr>
+          <tr>
+            <td>useRef</td>
+            <td>@ViewChild / template ref</td>
+            <td>Mutable, persists across renders</td>
+          </tr>
+          <tr>
+            <td>useMemo</td>
+            <td>Pure pipe / cached calc</td>
+            <td>Optimize expensive computations</td>
+          </tr>
+          <tr>
+            <td>useCallback</td>
+            <td>N/A (function memoization)</td>
+            <td>Prevents unnecessary child renders</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   );
 };

@@ -14,7 +14,6 @@ const UseMemo: React.FC = () => {
     <div style={{ padding: "1rem" }}>
       
       {/* trigger useMemo() */}
-      <button onClick={() => setNum(10)}> Hai </button>
       <h1>Double Number Page</h1>
       <input
         type="number"

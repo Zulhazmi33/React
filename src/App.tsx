@@ -9,6 +9,7 @@ import About from './pages/About';
 import Header from './components/Header/Header';
 import UseMemo from './pages/useMemo';
 import CustomHook from './pages/customHook';
+import Parent from './pages/parent';
 
 const App: React.FC = () => {
   return (
@@ -16,18 +17,20 @@ const App: React.FC = () => {
       <Router>
         <Header />
         <nav>
-          <Link to="/home">Home</Link> |{" "}
-          <Link to="/about">About</Link> |{" "}
-          <Link to="/useMemo">useMemo()</Link> |{" "}
-          <Link to="/customHook">Custom hook</Link> |{" "}
+          <Link to="/about">About</Link> | {" "}
+          <Link to="/home">Component</Link> | {" "}
+          <Link to="/useMemo">useMemo()</Link> | {" "}
+          <Link to="/customHook">Custom hook</Link> | {" "}
+          <Link to="/parent">Prop</Link> | {" "}
         </nav>
-        <div style={{padding: '5px'}}>
+        <div style={{padding: '30px'}}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<About />} />
             <Route path="/about" element={<About />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/useMemo" element={<UseMemo />} />
             <Route path="/customHook" element={<CustomHook />} />
+            <Route path="/parent" element={<Parent />} />
           </Routes>
         </div>
       </Router>

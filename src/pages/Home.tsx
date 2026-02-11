@@ -24,6 +24,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
+      <h1>Use component</h1>
       <TodoForm addTodo={addTodo} />
       <ul>
         {todos.map(todo => (
